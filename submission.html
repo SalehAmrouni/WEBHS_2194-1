@@ -376,7 +376,7 @@
                 <div class="profile-dropdown">
                     <button class="btn btn-secondary" onclick="toggleProfileMenu()">
                         <i data-lucide="user"></i>
-                        <span id="userName">11111111111</span>
+                        <span id="userName">Student</span>
                         <i data-lucide="chevron-down"></i>
                     </button>
                     <div class="profile-menu hidden" id="profileMenu">
@@ -929,7 +929,7 @@
                 // Auto-fill submitter information if available
                 document.getElementById('submitterName').value = profile.username || '';
                 document.getElementById('submitterEmail').value = profile.email || '';
-                document.getElementById('userName').textContent = profile.grade?.split(' ')[0] || 'TSA Student 2026' + ' Student';
+                document.getElementById('userName').textContent = profile.username?.split(' ')[0] || 'TSA Student 2026' + ' Student';
             }
         }
         
