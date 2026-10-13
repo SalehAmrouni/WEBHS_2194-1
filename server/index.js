@@ -57,10 +57,15 @@ export function createApp({ opportunities = loadOpportunities(), chatHandler = s
   api.use(express.json({ limit: '64kb', strict: true }));
 
   // Reject cross-site API writes: browsers always send Origin on POST.
+  // Compare hosts only, since TLS is often terminated by a proxy in front of
+  // the app (the browser says https:// while Express sees http).
   api.use((req, res, next) => {
     if (req.method !== 'POST') return next();
     const origin = req.get('origin');
-    if (origin && origin !== `${req.protocol}://${req.get('host')}`) {
+    if (!origin) return next();
+    let originHost = null;
+    try { originHost = new URL(origin).host; } catch { /* malformed */ }
+    if (originHost !== req.get('host')) {
       return res.status(403).json({ error: 'Cross-origin requests are not allowed.' });
     }
     next();

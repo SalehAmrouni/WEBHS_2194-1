@@ -49,7 +49,8 @@ export const ChatRequestSchema = z.object({
     role: z.enum(['user', 'assistant']),
     content: z.string().trim().min(1).max(4000),
   }).strict()).min(1).max(40),
-  profile: ProfileSchema.optional(),
+  // A malformed saved profile shouldn't block the conversation; drop it instead.
+  profile: ProfileSchema.optional().catch(undefined),
 }).strict().refine((b) => b.messages[0]?.role === 'user' && b.messages.at(-1)?.role === 'user', {
   message: 'Conversation must start and end with a user message',
 });

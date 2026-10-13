@@ -6,7 +6,7 @@ Student Atlas helps students find research programs, internships, competitions, 
 
 ## Features
 
-- **189 curated opportunities** across seven areas: STEM, Health & Medicine, Business, Arts & Media, Civics & Leadership, Service & Environment, and Scholarships & College Access. Each one links to its official site and lists grades, cost, format, and typical deadline.
+- **200+ curated opportunities** across seven areas: STEM, Health & Medicine, Business, Arts & Media, Civics & Leadership, Service & Environment, and Scholarships & College Access. Each one links to its official site and lists grades, cost, format, and typical deadline.
 - **Zeus AI counselor.** A real large language model (Claude, via the official Anthropic SDK) that streams answers and uses read-only tools to search the database. It recommends only real entries, which render as clickable cards in the chat.
 - **Pathway Wizard + explainable matching.** Students see a fit score for each opportunity with the reasons behind it ("Open to 10th graders", "Pays participants") and eligibility warnings.
 - **Explore view** with search, filters (interest, type, grade, cost, format, affordable, deadline soon, eligible, saved), sorting, and shareable URLs.
@@ -55,6 +55,16 @@ Without an API key the site still works; Zeus shows as offline.
 | `PORT` | `3000` | HTTP port |
 | `NODE_ENV` | (none) | Set to `production` to enable HSTS and caching |
 | `TRUST_PROXY` | (none) | Set (e.g. `1`) when behind a reverse proxy so rate limits see real IPs |
+
+## Deploying
+
+Student Atlas needs a Node.js host (it is no longer a static site, because the server keeps the AI key secret). Render, Railway, and Fly.io all work. On Render, for example:
+
+1. Create a new **Web Service** from this GitHub repository.
+2. Build command: `npm install`. Start command: `npm start`.
+3. Add environment variables: `ANTHROPIC_API_KEY`, `NODE_ENV=production`, and `TRUST_PROXY=1` (the host puts a proxy in front of the app; this lets rate limits see each visitor's real IP).
+
+Community suggestions are written to `data/submissions/`. On hosts with temporary disks, attach a persistent disk there (or set `SUBMISSIONS_DIR`) so they aren't lost on redeploy.
 
 ## Project structure
 

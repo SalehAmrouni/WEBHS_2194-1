@@ -16,7 +16,7 @@ const opportunities = loadOpportunities();
 // ---------------------------------------------------------------------------
 describe('opportunities database', () => {
   test('loads, validates, and covers every cluster', () => {
-    assert.ok(opportunities.length >= 150, `expected 150+ opportunities, got ${opportunities.length}`);
+    assert.ok(opportunities.length >= 200, `expected 200+ opportunities, got ${opportunities.length}`);
     for (const key of Object.keys(CLUSTERS)) {
       assert.ok(opportunities.some((o) => o.cluster === key), `no opportunities in ${key}`);
     }
@@ -224,6 +224,27 @@ describe('HTTP API', () => {
       body: JSON.stringify({ messages: [{ role: 'user', content: 'hi' }] }),
     });
     assert.equal(res.status, 403);
+  });
+
+  test('accepts same-host POSTs even when TLS is terminated by a proxy', async () => {
+    const host = new URL(base).host;
+    const res = await fetch(`${base}/api/chat`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', origin: `https://${host}` },
+      body: JSON.stringify({ messages: [{ role: 'user', content: 'hi' }] }),
+    });
+    assert.equal(res.status, 200);
+    await res.text();
+  });
+
+  test('ignores a malformed profile instead of rejecting the chat', async () => {
+    const res = await fetch(`${base}/api/chat`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ messages: [{ role: 'user', content: 'hi' }], profile: { grade: 42, interests: ['Nope'] } }),
+    });
+    assert.equal(res.status, 200);
+    await res.text();
   });
 
   test('rejects oversized bodies', async () => {

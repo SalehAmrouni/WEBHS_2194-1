@@ -836,5 +836,68 @@
       "local"
     ],
     "needBased": false
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "essay",
+      "philosophy",
+      "economics",
+      "politics",
+      "writing"
+    ],
+    "id": "john-locke-essay-competition",
+    "title": "John Locke Institute Global Essay Prize",
+    "organization": "John Locke Institute",
+    "cluster": "Civics",
+    "type": "Competition",
+    "format": "Virtual",
+    "location": "Online (global)",
+    "cost": "Award",
+    "costNote": "Free to enter; scholarships and prizes for winners",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Late spring",
+    "deadlineMonth": 6,
+    "season": "School year",
+    "description": "Global essay competition for students under 19. Entrants answer a challenging question in philosophy, politics, economics, history, psychology, theology, or law in 2,000 words or fewer.",
+    "url": "https://www.johnlockeinstitute.com"
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "history",
+      "research",
+      "writing",
+      "published"
+    ],
+    "id": "concord-review",
+    "title": "The Concord Review",
+    "organization": "The Concord Review",
+    "cluster": "Civics",
+    "type": "Competition",
+    "format": "Virtual",
+    "location": "Online submission",
+    "cost": "Fee",
+    "costNote": "Submission fee",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Rolling",
+    "deadlineMonth": null,
+    "season": "Year-round",
+    "description": "The only quarterly journal that publishes academic history research papers written by high school students. Publication is a highly respected signal of serious independent research.",
+    "url": "https://www.tcr.org"
   }
 ]

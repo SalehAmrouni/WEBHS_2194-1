@@ -4,7 +4,8 @@
 
 import { h, safeExternalUrl } from './dom.js';
 
-const INLINE = /(\*\*([^*]+?)\*\*|__([^_]+?)__|`([^`]+?)`|\[([^\]]+?)\]\(([^)\s]+?)\)|\*([^*\s][^*]*?)\*|_([^_\s][^_]*?)_)/g;
+// Underscore emphasis only counts at word boundaries, so snake_case stays intact.
+const INLINE = /(\*\*([^*]+?)\*\*|(?<!\w)__([^_]+?)__(?!\w)|`([^`]+?)`|\[([^\]]+?)\]\(([^)\s]+?)\)|\*([^*\s][^*]*?)\*|(?<!\w)_([^_\s][^_]*?)_(?!\w))/g;
 
 function renderInline(text, ctx) {
   const out = [];

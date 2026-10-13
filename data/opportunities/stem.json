@@ -1486,5 +1486,191 @@
       "emergency services"
     ],
     "needBased": false
+  },
+  {
+    "financialAid": true,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "math",
+      "proofs",
+      "residential",
+      "online"
+    ],
+    "id": "stanford-sumac",
+    "title": "Stanford University Mathematics Camp (SUMaC)",
+    "organization": "Stanford Pre-Collegiate Studies",
+    "cluster": "STEM",
+    "type": "Summer Program",
+    "format": "Hybrid",
+    "location": "Stanford, CA and online",
+    "cost": "Tuition",
+    "costNote": "Tuition with need-based financial aid",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "Early February",
+    "deadlineMonth": 2,
+    "season": "Summer",
+    "description": "Advanced summer mathematics program where students explore abstract algebra, number theory, topology, and more through lectures and research-style group work, offered residentially and online.",
+    "url": "https://sumac.spcs.stanford.edu"
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "research",
+      "selective",
+      "residential",
+      "paid"
+    ],
+    "id": "clark-scholars",
+    "title": "Anson L. Clark Scholars Program",
+    "organization": "Texas Tech University",
+    "cluster": "STEM",
+    "type": "Research",
+    "format": "In-person",
+    "location": "Lubbock, TX",
+    "cost": "Stipend",
+    "costNote": "No program fee; room and board plus a stipend ($25 application fee)",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "Winter",
+    "deadlineMonth": 2,
+    "season": "Summer",
+    "description": "Seven-week summer research program for twelve high school juniors and seniors (17+), who work one-on-one with Texas Tech faculty in science, engineering, humanities, and more.",
+    "url": "https://www.depts.ttu.edu/clarkscholars/"
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "free courses",
+      "math",
+      "science",
+      "ap",
+      "online"
+    ],
+    "id": "khan-academy",
+    "title": "Khan Academy",
+    "organization": "Khan Academy",
+    "cluster": "STEM",
+    "type": "Resource",
+    "format": "Virtual",
+    "location": "Online",
+    "cost": "Free",
+    "costNote": "Always free",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Anytime",
+    "deadlineMonth": null,
+    "season": "Year-round",
+    "description": "Free courses and practice in math, science, computing, economics, and test prep, from algebra through AP and college-level material. Great for getting ahead or filling gaps before a competitive program.",
+    "url": "https://www.khanacademy.org"
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "free courses",
+      "engineering",
+      "physics",
+      "computer science",
+      "online"
+    ],
+    "id": "mit-opencourseware",
+    "title": "MIT OpenCourseWare",
+    "organization": "Massachusetts Institute of Technology",
+    "cluster": "STEM",
+    "type": "Resource",
+    "format": "Virtual",
+    "location": "Online",
+    "cost": "Free",
+    "costNote": "Free, no registration required",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Anytime",
+    "deadlineMonth": null,
+    "season": "Year-round",
+    "description": "Free lecture videos, notes, and problem sets from thousands of real MIT courses, including a section designed for high school students.",
+    "url": "https://ocw.mit.edu"
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "coding",
+      "computer science",
+      "free courses",
+      "online",
+      "beginner-friendly"
+    ],
+    "id": "harvard-cs50",
+    "title": "Harvard CS50: Introduction to Computer Science",
+    "organization": "Harvard University",
+    "cluster": "STEM",
+    "type": "Resource",
+    "format": "Virtual",
+    "location": "Online",
+    "cost": "Free",
+    "costNote": "Free to take online; optional paid certificate",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Self-paced",
+    "deadlineMonth": null,
+    "season": "Year-round",
+    "description": "Harvard's famous intro computer science course, free online. Learn programming in C, Python, SQL, and web development through lectures and hands-on problem sets, at your own pace.",
+    "url": "https://cs50.harvard.edu"
+  },
+  {
+    "financialAid": false,
+    "minGPA": null,
+    "needBased": false,
+    "tags": [
+      "coding",
+      "web development",
+      "data science",
+      "free courses",
+      "online"
+    ],
+    "id": "freecodecamp",
+    "title": "freeCodeCamp",
+    "organization": "freeCodeCamp.org",
+    "cluster": "STEM",
+    "type": "Resource",
+    "format": "Virtual",
+    "location": "Online",
+    "cost": "Free",
+    "costNote": "Free nonprofit curriculum and certifications",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Self-paced",
+    "deadlineMonth": null,
+    "season": "Year-round",
+    "description": "A nonprofit with thousands of hours of free interactive coding lessons and projects in web development, JavaScript, Python, and data analysis, plus free certifications.",
+    "url": "https://www.freecodecamp.org"
   }
 ]
