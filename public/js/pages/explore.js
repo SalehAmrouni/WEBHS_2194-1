@@ -4,7 +4,7 @@ import { loadData, monthsUntilDeadline } from '../lib/data.js';
 import { opportunityCard, showOpportunity, setClusterMeta, clusterLabel } from '../lib/cards.js';
 import { getProfile, getSaved, getChat, onStoreChange } from '../lib/store.js';
 import { scoreOpportunity } from '../lib/match.js';
-import { mountZeus, checkAiHealth } from '../lib/zeus.js';
+import { mountZeus } from '../lib/zeus.js';
 import { openWizard } from '../lib/wizard.js';
 
 const PAGE_SIZE = 24;
@@ -177,20 +177,19 @@ boot('explore', async () => {
   fab.addEventListener('click', () => toggleDock(!dock.classList.contains('open')));
 
   const zeus = mountZeus(dock, {
-    knownIds: new Set(data.byId.keys()),
+    data,
     closeButton: closeDock,
     onOpenOpportunity: (id) => { const o = data.byId.get(id); if (o) showOpportunity(o, { onAsk }); },
   });
 
   function onAsk(opp) {
     toggleDock(true);
-    zeus.ask(`Tell me about ${opp.title} (id: ${opp.id}). Is it a good fit for me, and how should I prepare a strong application?`);
+    zeus.ask(`Tell me about ${opp.title}`);
   }
 
-  async function greetAfterWizard() {
-    if (!(await checkAiHealth())) return;
+  function greetAfterWizard() {
     toggleDock(window.matchMedia('(max-width: 1280px)').matches);
-    zeus.ask('I just finished the Pathway Wizard. Based on my profile, what are my best opportunities right now, and what should my plan be for the next few months?');
+    zeus.ask('I just finished the Pathway Wizard. What should my plan be?');
   }
 
   renderNudge();

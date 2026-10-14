@@ -144,7 +144,7 @@ boot('profile', async () => {
       h('h3', {}, 'Your data stays with you'),
       h('ul', { class: 'reasons' },
         h('li', { class: 'good' }, icon('check-circle-2'), 'No account or password: your profile and saved list live only in this browser (localStorage).'),
-        h('li', { class: 'good' }, icon('check-circle-2'), 'Chats with Zeus send your question and profile to our server, which forwards them to the AI provider to generate an answer. We do not store chat transcripts.'),
+        h('li', { class: 'good' }, icon('check-circle-2'), 'Zeus runs entirely in your browser. Your questions and profile are never sent anywhere.'),
         h('li', { class: 'good' }, icon('check-circle-2'), 'Chat history is kept only for this browser tab and clears when you close it.'),
         h('li', { class: 'good' }, icon('check-circle-2'), 'No ads, no tracking, no third-party analytics.')),
       h('div', { class: 'row' },

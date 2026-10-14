@@ -161,7 +161,7 @@ export function renderLayout(activePage) {
     h('div', { class: 'container' },
       h('div', {},
         h('a', { class: 'brand', href: '/' }, h('span', { class: 'brand-mark' }, icon('compass')), 'Student Atlas'),
-        h('p', { class: 'muted small mt-2' }, 'A free, AI-guided map of opportunities for high school students: research, internships, competitions, scholarships, service, and more.'),
+        h('p', { class: 'muted small mt-2' }, 'A free, personalized map of opportunities for high school students: research, internships, competitions, scholarships, service, and more.'),
         h('p', { class: 'faint small mb-0' }, 'Program details change every year. Always confirm dates and eligibility on the official website.')),
       h('div', {},
         h('h4', {}, 'Explore'),

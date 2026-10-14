@@ -2,7 +2,7 @@
   "name": "student-atlas",
   "version": "2.0.0",
   "private": true,
-  "description": "Student Atlas: an AI-guided directory of opportunities for high school students.",
+  "description": "Student Atlas: a personalized directory of opportunities for high school students.",
   "type": "module",
   "main": "server/index.js",
   "engines": {
@@ -16,7 +16,6 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.133.0",
     "express": "^5.3.0",
     "express-rate-limit": "^8.7.1",
     "helmet": "^8.3.0",

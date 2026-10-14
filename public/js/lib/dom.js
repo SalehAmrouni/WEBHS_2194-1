@@ -1,5 +1,5 @@
 // Small DOM toolkit. Everything is built with createElement/textContent so
-// user- or AI-provided strings are never parsed as HTML.
+// user-provided strings are never parsed as HTML.
 
 export function h(tag, props = {}, ...children) {
   const el = document.createElement(tag);

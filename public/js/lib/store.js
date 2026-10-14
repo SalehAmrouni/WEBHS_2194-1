@@ -1,12 +1,13 @@
-// Client-side persistence. Everything a student enters stays in this browser's
-// localStorage; nothing is sent to the server except chat requests (which
-// include the profile so Zeus can personalize answers).
+// Client-side persistence. Everything a student enters (profile, saved list,
+// settings, Zeus conversations) stays in this browser and is never sent to
+// the server.
 
 const KEYS = {
   profile: 'atlas.profile.v2',
   saved: 'atlas.saved.v2',
   settings: 'atlas.settings.v2',
   chat: 'atlas.chat.v2',
+  chatState: 'atlas.chatstate.v2',
 };
 
 function read(key, fallback, storage = window.localStorage) {
@@ -90,18 +91,6 @@ export function sanitizeProfile(p) {
   };
 }
 
-/** The subset of the profile shared with Zeus (no timestamps). */
-export function profileForAI(p = getProfile()) {
-  if (!p) return undefined;
-  const out = {};
-  for (const k of ['firstName', 'grade', 'gpa', 'serviceHours', 'interests', 'careerGoals', 'lookingFor', 'financialNeed', 'formatPreference', 'state', 'goals']) {
-    const v = p[k];
-    if (v === undefined || (Array.isArray(v) && !v.length)) continue;
-    out[k] = v;
-  }
-  return Object.keys(out).length ? out : undefined;
-}
-
 // ---- Saved opportunities ------------------------------------------------------
 export function getSaved() {
   const s = read(KEYS.saved, []);
@@ -145,6 +134,15 @@ export function saveChat(messages) {
 }
 export function clearChat() {
   remove(KEYS.chat, window.sessionStorage);
+  remove(KEYS.chatState, window.sessionStorage);
+}
+/** Zeus's conversation memory (last results, filters, facts the student shared). */
+export function getChatState() {
+  const s = read(KEYS.chatState, {}, window.sessionStorage);
+  return s && typeof s === 'object' && !Array.isArray(s) ? s : {};
+}
+export function saveChatState(state) {
+  write(KEYS.chatState, state, window.sessionStorage);
 }
 
 // ---- Everything ---------------------------------------------------------------
